@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambakong - Keripik Singkong Renyah & Bumbu Melimpah</title>
+    
+    <!-- Google Fonts: Poppins untuk kesan modern dan ramah -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tailwind Kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#fef3c7', // Yellow 50
+                            yellow: '#fbbf24', // Yellow 400
+                            orange: '#f97316', // Orange 500
+                            dark: '#78350f',   // Amber 900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom CSS tambahan jika diperlukan */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-pattern {
+            background-color: #fef3c7;
+            background-image: radial-gradient(#fbbf24 0.5px, transparent 0.5px), radial-gradient(#fbbf24 0.5px, #fef3c7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c; 
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-orange-50 antialiased">
+
+    <!-- NAVBAR SECTION -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-brand-orange tracking-tight flex items-center gap-2">
+                        <i class="fa-solid fa-leaf text-brand-yellow"></i>
+                        Ambakong<span class="text-brand-dark">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Tentang</a>
+                    <a href="#produk" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Produk</a>
+                    <a href="#testimoni" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Testimoni</a>
+                    <button onclick="pesanWA('Campur (Bebas Pilih)')" class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Pesan Sekarang
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl rounded-b-2xl transition-all border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#beranda" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-800 hover:text-brand-orange hover:bg-orange-50">Beranda</a>
+                <a href="#tentang" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-800 hover:text-brand-orange hover:bg-orange-50">Tentang</a>
+                <a href="#produk" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-800 hover:text-brand-orange hover:bg-orange-50">Produk</a>
+                <a href="#testimoni" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-800 hover:text-brand-orange hover:bg-orange-50">Testimoni</a>
+                <button onclick="pesanWA('Campur (Bebas Pilih)')" class="mt-4 w-full bg-brand-orange text-white px-4 py-3 rounded-full font-bold shadow-md flex justify-center items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Pesan Sekarang
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center md:text-left">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-yellow/20 text-brand-dark font-semibold text-sm mb-4 border border-brand-yellow/50">
+                        ⭐ Cemilan Favorit Mahasiswa
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark leading-tight mb-6">
+                        Kriuknya Bikin Nagih, <br>
+                        <span class="text-brand-orange">Bumbunya Melimpah!</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
+                        Nikmati sensasi keripik singkong Ambakong yang dipotong tipis sempurna. Tanpa bahan pengawet, 100% singkong pilihan dengan racikan bumbu rahasia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#produk" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-3.5 rounded-full font-bold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-1 transition-all text-center">
+                            Lihat Varian Rasa
+                        </a>
+                        <button onclick="pesanWA('Tanya-tanya dulu')" class="bg-white border-2 border-brand-orange text-brand-orange hover:bg-orange-50 px-8 py-3.5 rounded-full font-bold shadow hover:shadow-md transition-all flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-comments"></i> Hubungi Kami
+                        </button>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="mt-10 flex items-center justify-center md:justify-start gap-6 text-sm font-medium text-brand-dark">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-brand-orange"></i> 100% Halal</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-brand-orange"></i> Tanpa Pengawet</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-brand-orange"></i> Selalu Fresh</div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative mt-10 md:mt-0">
+                    <div class="absolute inset-0 bg-brand-orange rounded-full blur-3xl opacity-20 transform translate-x-10 translate-y-10"></div>
+                    <!-- Placeholder Gambar Keripik -->
+                    <img src="C:\Users\Admin\Desktop\ambakong-project\assets\greentea.jpg" alt="Keripik Singkong Ambakong" class="relative z-10 w-full max-w-md mx-auto rounded-full border-8 border-white shadow-2xl object-cover h-[400px] md:h-[500px]">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-10 -left-6 md:left-0 z-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fa-solid fa-star text-yellow-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Terjual 309 Pcs</p>
+                            <p class="text-xs text-gray-500">Bulan ini</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI SECTION -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="C:\Users\Admin\Desktop\ambakong-project\assets\keripik.jpg" alt="Proses Pembuatan" class="rounded-2xl shadow-lg w-full h-100 object-cover transform translate-y-8">
+                    <img src="C:\Users\Admin\Desktop\ambakong-project\assets\dokumentasi.jpeg" alt="Singkong Segar" class="rounded-2xl shadow-lg w-full h-100 object-cover">
+                </div>
+                
+                <!-- Text -->
+                <div>
+                    <h4 class="text-brand-orange font-bold tracking-wider uppercase mb-2">Tentang Ambakong</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Dibuat dengan Cinta, Dari Petani Lokal untuk Anda</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Berawal dari tugas kuliah, <strong>Ambakong</strong> hadir untuk menaikkan kelas keripik singkong tradisional. Kami hanya menggunakan singkong segar pilihan dari petani lokal yang diproses dengan standar kebersihan tinggi.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Rahasia kelezatan kami ada pada teknik penggorengan yang memastikan keripik super renyah, serta racikan bumbu yang berani dan melimpah.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-orange-100 p-3 rounded-lg text-brand-orange"><i class="fa-solid fa-leaf text-xl"></i></div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Bahan Alami</h5>
+                                <p class="text-sm text-gray-500">Tanpa pengawet & MSG buatan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-orange-100 p-3 rounded-lg text-brand-orange"><i class="fa-solid fa-fire-burner text-xl"></i></div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Super Renyah</h5>
+                                <p class="text-sm text-gray-500">Teknik potong tipis presisi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK KAMI SECTION -->
+    <section id="produk" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-brand-orange font-bold tracking-wider uppercase mb-2">Varian Rasa</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Pilih Favoritmu Sekarang!</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Tersedia dalam berbagai rasa yang diformulasikan khusus untuk menggoyang lidah Anda. Cocok untuk teman nonton, kerja, atau kumpul keluarga.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="C:\Users\Admin\Desktop\ambakong-project\assets\greentea.jpg" alt="Ambakong Green Tea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-yellow text-brand-dark text-xs font-bold px-3 py-1 rounded-full">Best Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">Rasa Green Tea</h3>
+                            <span class="text-lg font-bold text-brand-orange">Rp 5.000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Kelezatan green tea dengan aroma alami yang menyegarkan. Rasa manis yang pas dan aftertaste yang memikat di setiap kunyahan.</p>
+                        <button onclick="pesanWA('Green Tea')" class="w-full bg-brand-dark hover:bg-orange-950 text-white py-3 rounded-xl font-bold transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Beli via WA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Placeholder Spicy Chips -->
+                        <img src="C:\Users\Admin\Desktop\ambakong-project\assets\coklat.jpg" alt="Ambakong Coklat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">Rasa Coklat</h3>
+                            <span class="text-lg font-bold text-brand-orange">Rp 5.000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Rasa cokelat autentik dengan perpaduan manis yang pas dan aroma kakao yang menggoda. Lezat di setiap gigitan dan bikin susah berhenti ngunyah.</p>
+                        <button onclick="pesanWA('Coklat')" class="w-full bg-brand-dark hover:bg-orange-950 text-white py-3 rounded-xl font-bold transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Beli via WA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Placeholder Sweet/Spicy Chips -->
+                        <img src="C:\Users\Admin\Desktop\ambakong-project\assets\taro.jpg" alt="Ambakong Taro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">Rasa Taro</h3>
+                            <span class="text-lg font-bold text-brand-orange">Rp 5.000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6">Kelezatan taro dengan karakter rasa yang unik dan tekstur renyah yang sempurna. Cocok untuk menemani setiap momen santai.</p>
+                        <button onclick="pesanWA('Taro')" class="w-full bg-brand-dark hover:bg-orange-950 text-white py-3 rounded-xl font-bold transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Beli via WA
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section id="testimoni" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-brand-orange font-bold tracking-wider uppercase mb-2">Ulasan Pelanggan</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Apa Kata Mereka?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-orange-50 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
+                    <div class="flex text-brand-yellow mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Asli ini keripik singkong terenak yang pernah aku coba! Bumbu baladonya ga pelit sama sekali, dan renyahnya pas ga bikin sakit gigi."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex justify-center items-center font-bold text-xl">R</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Rina S.</h5>
+                            <p class="text-xs text-gray-500">Karyawan Swasta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-orange-50 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
+                    <div class="flex text-brand-yellow mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Anak-anak suka banget yang rasa original. Gurihnya pas, ga terlalu asin. Beli 3 bungkus ludes dalam semalam buat nonton Netflix!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex justify-center items-center font-bold text-xl">B</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Budi Pratama</h5>
+                            <p class="text-xs text-gray-500">Ayah 2 Anak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-orange-50 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
+                    <div class="flex text-brand-yellow mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Rasa pedas manisnya juara, bumbunya melimpah dan nempel di keripiknya. Packagingnya juga aman, sampai rumah ga banyak yang hancur."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-yellow text-brand-dark rounded-full flex justify-center items-center font-bold text-xl">A</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Anita Wijaya</h5>
+                            <p class="text-xs text-gray-500">Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div>
+                    <a href="#" class="text-3xl font-bold text-brand-orange tracking-tight flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-leaf text-brand-yellow"></i>
+                        Ambakong<span class="text-white">.</span>
+                    </a>
+                    <p class="text-amber-100/80 leading-relaxed mb-6">
+                        Menghadirkan kelezatan keripik singkong tradisional dengan sentuhan modern. Kualitas premium, rasa maksimum.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ambakong_ambatukong/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@hanlie999/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/Achannsama/" target="_blank"  class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-brand-yellow">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-amber-100/80 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="text-amber-100/80 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#produk" class="text-amber-100/80 hover:text-white transition-colors">Varian Produk</a></li>
+                        <li><a href="#testimoni" class="text-amber-100/80 hover:text-white transition-colors">Testimoni Pelanggan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-brand-yellow">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-amber-100/80">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-orange"></i>
+                            <span>Jl. Ali Asik I, Kerabut, Pangkalpinang</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-brand-orange"></i>
+                            <span>+62 819-9869-0457</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-brand-orange"></i>
+                            <span>Buka Setiap Hari: 08.00 - 20.00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-amber-100/60 text-sm">
+                <p>&copy; <span id="year"></span> Ambakong Keripik Singkong. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. SETTING NOMOR WHATSAPP (GANTI DENGAN NOMOR ANDA)
+        // Format: Kode negara tanpa '+' (contoh untuk Indonesia: 62)
+        const NOMOR_WHATSAPP = "6281998690457"; 
+        
+        // Fungsi untuk mengarahkan ke WhatsApp
+        function pesanWA(varian) {
+            const pesan = `Halo Admin Ambakong, saya tertarik untuk memesan keripik singkong varian *${varian}*. Bisa dibantu?`;
+            // Encode URL agar spasi dan karakter khusus terbaca benar di link
+            const urlWA = `https://api.whatsapp.com/send?phone=${NOMOR_WHATSAPP}&text=${encodeURIComponent(pesan)}`;
+            
+            // Buka di tab baru
+            window.open(urlWA, '_blank');
+        }
+
+        // 2. LOGIKA NAVBAR (Sticky & Background saat di-scroll)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('glass-nav', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('glass-nav', 'shadow-md', 'py-2');
+            }
+        });
+
+        // 3. LOGIKA MOBILE MENU (Hamburger Toggle)
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu saat link di-klik (di HP)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 4. SET TAHUN COPYRIGHT OTOMATIS
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
