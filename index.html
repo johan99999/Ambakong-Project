@@ -1,3 +1,6 @@
+Tentu, ini adalah keseluruhan kode yang sudah disatukan. Kamu tinggal **Copy (salin)** semua kode di bawah ini, lalu **Paste (tempel)** ke dalam *file* HTML kamu (misalnya `index.html`), menggantikan kode yang lama.
+
+```html
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -5,16 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambakong - Keripik Singkong Renyah & Bumbu Melimpah</title>
     
-    <!-- Google Fonts: Poppins untuk kesan modern dan ramah -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome CDN untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Konfigurasi Tailwind Kustom -->
     <script>
         tailwind.config = {
             theme: {
@@ -61,23 +60,25 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ea580c; 
         }
+        /* Animasi untuk ulasan baru */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-orange-50 antialiased">
 
-    <!-- NAVBAR SECTION -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="text-2xl font-bold text-brand-orange tracking-tight flex items-center gap-2">
-                        <img src= "assets/ambakong.png" class="h-10 w-auto">
+                        <img src="assets/ambakong.png" class="h-10 w-auto">
                         Ambakong
                     </a>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#beranda" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Beranda</a>
                     <a href="#tentang" class="text-brand-dark hover:text-brand-orange font-medium transition-colors">Tentang</a>
@@ -88,7 +89,6 @@
                     </button>
                 </div>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-orange focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -97,7 +97,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl rounded-b-2xl transition-all border-t border-gray-100">
             <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
                 <a href="#beranda" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-800 hover:text-brand-orange hover:bg-orange-50">Beranda</a>
@@ -111,11 +110,9 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section id="beranda" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden hero-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
                 <div class="text-center md:text-left">
                     <span class="inline-block py-1 px-3 rounded-full bg-brand-yellow/20 text-brand-dark font-semibold text-sm mb-4 border border-brand-yellow/50">
                         ⭐ Cemilan Favorit Mahasiswa
@@ -136,7 +133,6 @@
                         </button>
                     </div>
                     
-                    <!-- Quick Stats -->
                     <div class="mt-10 flex items-center justify-center md:justify-start gap-6 text-sm font-medium text-brand-dark">
                         <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-brand-orange"></i> 100% Halal</div>
                         <div class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-brand-orange"></i> Tanpa Pengawet</div>
@@ -144,13 +140,10 @@
                     </div>
                 </div>
 
-                <!-- Hero Image -->
                 <div class="relative mt-10 md:mt-0">
                     <div class="absolute inset-0 bg-brand-orange rounded-full blur-3xl opacity-20 transform translate-x-10 translate-y-10"></div>
-                    <!-- Placeholder Gambar Keripik -->
                     <img src="assets/greentea.jpg" alt="Keripik Singkong Ambakong" class="relative z-10 w-full max-w-md mx-auto rounded-full border-8 border-white shadow-2xl object-cover h-[400px] md:h-[500px]">
                     
-                    <!-- Floating Badge -->
                     <div class="absolute bottom-10 -left-6 md:left-0 z-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
                         <div class="bg-green-100 p-3 rounded-full">
                             <i class="fa-solid fa-star text-yellow-500 text-xl"></i>
@@ -165,17 +158,14 @@
         </div>
     </section>
 
-    <!-- TENTANG KAMI SECTION -->
     <section id="tentang" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Image Grid -->
                 <div class="grid grid-cols-2 gap-4">
                     <img src="assets/keripik.jpg" alt="Proses Pembuatan" class="rounded-2xl shadow-lg w-full h-100 object-cover transform translate-y-8">
                     <img src="assets/dokumentasi.jpeg" alt="Singkong Segar" class="rounded-2xl shadow-lg w-full h-100 object-cover">
                 </div>
                 
-                <!-- Text -->
                 <div>
                     <h4 class="text-brand-orange font-bold tracking-wider uppercase mb-2">Tentang Ambakong</h4>
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Dibuat dengan Cinta, Dari Petani Lokal untuk Anda</h2>
@@ -207,7 +197,6 @@
         </div>
     </section>
 
-    <!-- PRODUK KAMI SECTION -->
     <section id="produk" class="py-20 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -216,10 +205,8 @@
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Tersedia dalam berbagai rasa yang diformulasikan khusus untuk menggoyang lidah Anda. Cocok untuk teman nonton, kerja, atau kumpul keluarga.</p>
             </div>
 
-            <!-- Product Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Product Card 1 -->
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
                     <div class="relative h-64 overflow-hidden">
                         <img src="assets/greentea.jpg" alt="Ambakong Green Tea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
@@ -237,10 +224,8 @@
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
                     <div class="relative h-64 overflow-hidden">
-                        <!-- Placeholder Spicy Chips -->
                         <img src="assets/coklat.jpg" alt="Ambakong Coklat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-6">
@@ -255,10 +240,8 @@
                     </div>
                 </div>
 
-                <!-- Product Card 3 -->
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
                     <div class="relative h-64 overflow-hidden">
-                        <!-- Placeholder Sweet/Spicy Chips -->
                         <img src="assets/taro.jpg" alt="Ambakong Taro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-6">
@@ -277,16 +260,47 @@
         </div>
     </section>
 
-    <!-- TESTIMONI SECTION -->
     <section id="testimoni" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h4 class="text-brand-orange font-bold tracking-wider uppercase mb-2">Ulasan Pelanggan</h4>
                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Apa Kata Mereka?</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testi 1 -->
+            <div class="max-w-2xl mx-auto mb-16 bg-white p-6 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.05)] border border-orange-50">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Tulis Ulasan Anda</h3>
+                <form id="form-ulasan" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                            <input type="text" id="input-nama" required placeholder="Nama Anda" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Status/Pekerjaan</label>
+                            <input type="text" id="input-peran" required placeholder="Cth: Mahasiswa / Karyawan" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Rating</label>
+                        <select id="input-rating" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all text-yellow-500">
+                            <option value="5">⭐⭐⭐⭐⭐ (Sangat Puas)</option>
+                            <option value="4">⭐⭐⭐⭐ (Puas)</option>
+                            <option value="3">⭐⭐⭐ (Cukup)</option>
+                            <option value="2">⭐⭐ (Kurang)</option>
+                            <option value="1">⭐ (Kecewa)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Ulasan Anda</label>
+                        <textarea id="input-teks" required rows="3" placeholder="Ceritakan rasa favoritmu..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-orange hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Ulasan
+                    </button>
+                </form>
+            </div>
+
+            <div id="testimoni-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-orange-50 p-8 rounded-2xl relative">
                     <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
                     <div class="flex text-brand-yellow mb-4">
@@ -294,7 +308,7 @@
                     </div>
                     <p class="text-gray-700 italic mb-6">"Asli ini keripik singkong terenak yang pernah aku coba! Bumbu taronya lumer banget loh ya ga pelit sama sekali, dan renyahnya pas ga bikin sakit gigi."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex justify-center items-center font-bold text-xl">R</div>
+                        <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex justify-center items-center font-bold text-xl">H</div>
                         <div>
                             <h5 class="font-bold text-gray-800">Han lie</h5>
                             <p class="text-xs text-gray-500">Owner Ambacorp</p>
@@ -302,7 +316,6 @@
                     </div>
                 </div>
 
-                <!-- Testi 2 -->
                 <div class="bg-orange-50 p-8 rounded-2xl relative">
                     <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
                     <div class="flex text-brand-yellow mb-4">
@@ -310,7 +323,7 @@
                     </div>
                     <p class="text-gray-700 italic mb-6">"Anak-anak suka banget loh ya yang rasa cokelat. Gurihnya pas, ga terlalu manis. Beli 3 bungkus ludes dalam semalam buat nonton Netflix!"</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex justify-center items-center font-bold text-xl">B</div>
+                        <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex justify-center items-center font-bold text-xl">M</div>
                         <div>
                             <h5 class="font-bold text-gray-800">Muhammad Ribhan Syahputra</h5>
                             <p class="text-xs text-gray-500">Karyawan Amazon</p>
@@ -318,7 +331,6 @@
                     </div>
                 </div>
 
-                <!-- Testi 3 -->
                 <div class="bg-orange-50 p-8 rounded-2xl relative">
                     <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
                     <div class="flex text-brand-yellow mb-4">
@@ -337,11 +349,9 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-brand-dark text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <!-- Brand Info -->
                 <div>
                     <a href="#" class="text-3xl font-bold text-brand-orange tracking-tight flex items-center gap-2 mb-6">
                         <i class="fa-solid fa-leaf text-brand-yellow"></i>
@@ -357,7 +367,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-xl font-bold mb-6 text-brand-yellow">Tautan Cepat</h4>
                     <ul class="space-y-3">
@@ -368,7 +377,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
                 <div>
                     <h4 class="text-xl font-bold mb-6 text-brand-yellow">Hubungi Kami</h4>
                     <ul class="space-y-4 text-amber-100/80">
@@ -394,23 +402,18 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 1. SETTING NOMOR WHATSAPP (GANTI DENGAN NOMOR ANDA)
-        // Format: Kode negara tanpa '+' (contoh untuk Indonesia: 62)
+        // 1. SETTING NOMOR WHATSAPP
         const NOMOR_WHATSAPP = "6281998690457"; 
         
-        // Fungsi untuk mengarahkan ke WhatsApp
+        // 2. Fungsi untuk mengarahkan ke WhatsApp
         function pesanWA(varian) {
             const pesan = `Halo Admin Ambakong, saya tertarik untuk memesan keripik singkong varian *${varian}*. Bisa dibantu?`;
-            // Encode URL agar spasi dan karakter khusus terbaca benar di link
             const urlWA = `https://api.whatsapp.com/send?phone=${NOMOR_WHATSAPP}&text=${encodeURIComponent(pesan)}`;
-            
-            // Buka di tab baru
             window.open(urlWA, '_blank');
         }
 
-        // 2. LOGIKA NAVBAR (Sticky & Background saat di-scroll)
+        // 3. LOGIKA NAVBAR
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
@@ -422,7 +425,7 @@
             }
         });
 
-        // 3. LOGIKA MOBILE MENU (Hamburger Toggle)
+        // 4. LOGIKA MOBILE MENU
         const btnMenu = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -431,15 +434,93 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Tutup menu saat link di-klik (di HP)
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // 4. SET TAHUN COPYRIGHT OTOMATIS
+        // 5. SET TAHUN COPYRIGHT OTOMATIS
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 6. LOGIKA FITUR ULASAN (LocalStorage)
+        const formUlasan = document.getElementById('form-ulasan');
+        const testimoniContainer = document.getElementById('testimoni-container');
+
+        // Bikin bintang
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<i class="fa-solid fa-star"></i>'; 
+                } else {
+                    stars += '<i class="fa-regular fa-star"></i>'; 
+                }
+            }
+            return stars;
+        }
+
+        // Tampilkan ulasan ke HTML
+        function renderReview(nama, peran, rating, teks) {
+            const inisial = nama.charAt(0).toUpperCase();
+            const bgColors = ['bg-brand-orange', 'bg-brand-dark', 'bg-brand-yellow'];
+            const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+            const textColor = randomColor === 'bg-brand-yellow' ? 'text-brand-dark' : 'text-white';
+
+            const ulasanHTML = `
+                <div class="bg-orange-50 p-8 rounded-2xl relative animate-[fadeIn_0.5s_ease-out]">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-orange/20 absolute top-4 right-6"></i>
+                    <div class="flex text-brand-yellow mb-4">
+                        ${generateStars(rating)}
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"${teks}"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 ${randomColor} ${textColor} rounded-full flex justify-center items-center font-bold text-xl">${inisial}</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800">${nama}</h5>
+                            <p class="text-xs text-gray-500">${peran}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            // Sisipkan di posisi pertama
+            testimoniContainer.insertAdjacentHTML('afterbegin', ulasanHTML);
+        }
+
+        // Muat dari penyimpanan browser saat web dibuka
+        function loadReviews() {
+            const savedReviews = JSON.parse(localStorage.getItem('ambakongReviews')) || [];
+            savedReviews.reverse().forEach(review => {
+                renderReview(review.nama, review.peran, review.rating, review.teks);
+            });
+        }
+
+        // Aksi saat form dikirim
+        formUlasan.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const nama = document.getElementById('input-nama').value;
+            const peran = document.getElementById('input-peran').value;
+            const rating = parseInt(document.getElementById('input-rating').value);
+            const teks = document.getElementById('input-teks').value;
+
+            // Simpan
+            const newReview = { nama, peran, rating, teks };
+            const savedReviews = JSON.parse(localStorage.getItem('ambakongReviews')) || [];
+            savedReviews.unshift(newReview); 
+            localStorage.setItem('ambakongReviews', JSON.stringify(savedReviews));
+
+            // Tampilkan
+            renderReview(nama, peran, rating, teks);
+
+            alert('Terima kasih! Ulasan Anda telah berhasil ditambahkan.');
+            formUlasan.reset();
+        });
+
+        // Panggil fungsi muat ulasan
+        loadReviews();
     </script>
 </body>
 </html>
+
+```
