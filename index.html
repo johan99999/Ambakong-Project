@@ -405,7 +405,7 @@
         
         // 2. Fungsi untuk mengarahkan ke WhatsApp
         function pesanWA(varian) {
-            const pesan = `Halo Admin Ambakong, saya tertarik untuk memesan keripik singkong varian *${varian}*. Bisa dibantu?`;
+            const pesan = `Halo Admin Ambakong, saya tertarik untuk memesan keripik singkong varian *${varian}*. Bisa dibantu?(OPEN 24 hour,kecuali hari minggu)`;
             const urlWA = `https://api.whatsapp.com/send?phone=${NOMOR_WHATSAPP}&text=${encodeURIComponent(pesan)}`;
             window.open(urlWA, '_blank');
         }
